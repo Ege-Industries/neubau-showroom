@@ -632,6 +632,23 @@ footer .wrap>div{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
 }
 @media (prefers-reduced-motion:reduce){.sund .sb,.leadc .ab,.tl2 .home,.pdfs .pg,.shots .play i{animation:none}.sund .sb{left:62%;top:30%}}
 
+/* ===== Handy: aufgeräumt (15.10.) ===== */
+@media (max-width:760px){
+  .chap{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .chap .cardx{padding:18px 18px 16px;gap:10px}
+  .chap h2{font-size:1.72rem;line-height:1.08}
+  .chap p{font-size:.97rem;line-height:1.5}
+  .chap .no{font-size:.72rem}.chap .orbn{width:36px;height:36px;font-size:1.1rem}
+  .chap .cv{display:none}
+  .chap .cta-row{margin-top:2px}
+  .qs-list{gap:8px}.qs-list li{font-size:.94rem}
+  body.m-story .hud .tag,body.m-story .hud svg,body.m-story .hud .lead,body.m-story .hud .tip{opacity:0!important;visibility:hidden!important}
+  .hud .tip{scale:.86;transform-origin:top right}
+  .mbar{transition:opacity .3s,transform .3s}
+  .mbar .btn{padding:11px 12px 11px 20px;font-size:.92rem}
+  .mbar.off{opacity:0;transform:translateY(24px);pointer-events:none}
+}
+
 /* Premium-Farben: Saphir, Smaragd, Champagner */
 html[data-pal="premium"]{--ink:#14233a;--ink-2:#4a5a6e;--muted:#7d8c9c;--aqua:#2f6fae;--aqua-l:#9cc2e6;--aqua-d:#1d4f8a;--leaf:#3f7d5a;--leaf-d:#2c5f43;--s-top:#7aa3cc;--s-mid:#c4d8ea;--s-bot:#f5f2ea}
 html[data-pal="premium"] body{background:transparent}
@@ -748,7 +765,7 @@ html[data-pal="premium"] .cube .f5{background:linear-gradient(135deg,#9bb98c,#47
   </section>
 
   <section class="sec wrap" id="vergleich" style="padding-top:0">
-    <div class="head rv"><div><span class="kick">Vorher und nachher</span><h2>Warum nicht einfach <em>ein Exposé?</em></h2></div><p>Fahren Sie mit der Maus darüber oder schauen Sie einfach zu. Links das, was Käufer heute bekommen. Rechts das, was sie überzeugt.</p></div>
+    <div class="head rv"><div><span class="kick">Vorher und nachher</span><h2>Warum nicht einfach <em>ein Exposé?</em></h2></div><p>Ziehen Sie die Kugel zur Seite oder schauen Sie einfach zu. Links das, was Käufer heute bekommen. Rechts das, was sie überzeugt.</p></div>
     <div class="ba rv" id="ba">
       <div class="ba-l"><div class="pg"><b>Exposé</b><i></i><i></i><i></i><i></i><i></i><i></i><div class="fp"></div></div><div class="pg"><b>Lage</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="pdfbar">Exposé_v7_FINAL.pdf · Seite 3 von 14 · 37 %</span></div>
       <div class="ba-r"><img src="img/p-etage.jpg" alt="3D-Projektseite: geöffnete Etage mit möblierten Wohnungen" loading="lazy"><span class="pill" style="left:58%;top:30%"><span class="okb">✓</span><b>WE 07</b> · frei</span><span class="pill" style="left:66%;top:62%">☀ 6,4 h Sonne</span></div>
@@ -1096,6 +1113,7 @@ function progress() {
   for (let i = 0; i < A.length - 1; i++) if (y < A[i + 1]) return i + (y - A[i]) / Math.max(1, A[i + 1] - A[i]);
   return A.length - 1;
 }
+const y0 = () => scrollY;
 function onScroll() {
   S = progress();
   const h = innerHeight, wr = $('#beispiel').getBoundingClientRect(), tr = $('#termin').getBoundingClientRect();
@@ -1104,6 +1122,9 @@ function onScroll() {
   FIN = V2 > V1 ? 1 : 0; VIS = Math.max(V1, V2);
   DIP = mob() ? 1 - band(S, -.85, -.65, -.45, -.25) : 1;
   $('#glw').style.opacity = VIS * DIP; $('#hud').style.opacity = V1 * DIP;
+  // Handy: 3D-Beschriftungen nur im Hero; fester Knopf nicht im Hero und nicht beim Termin
+  document.body.classList.toggle('m-story', mob() && S > -0.55);
+  const mb = $('.mbar'); if (mb) { const hide = y0() < innerHeight * .8 || (tr.top < h && tr.bottom > 0); mb.classList.toggle('off', hide); }
   // Röhre im Ablauf füllt sich
   const tl = $('#tl').getBoundingClientRect(), p = clamp01((h * .85 - tl.top) / (tl.height + h * .3));
   $('#water').style.width = `calc(${p * 100}% - 6px)`;
