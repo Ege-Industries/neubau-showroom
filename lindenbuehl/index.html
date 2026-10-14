@@ -259,7 +259,9 @@ footer .in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-bet
   .f-head p{display:none}
   .f-tools{top:auto;bottom:calc(48svh + 8px);left:12px;right:12px;flex-wrap:nowrap;align-items:stretch;gap:8px}
   .f-tools .chipbar{flex:none}
-  .f-tools .pillbtn{height:100%;display:flex;align-items:center}
+  .f-tools{align-items:center}
+  .f-tools .chipbar{align-self:center}
+  .f-tools .pillbtn{height:auto;padding:10px 14px;font-size:.8rem;border-radius:999px;display:flex;align-items:center;white-space:nowrap}
   .suncard{width:auto;flex:1;padding:7px 10px;gap:3px;border-radius:14px}
   .suncard .row .lbl{display:none}
   .suncard .read{font-size:.66rem}
@@ -1708,6 +1710,7 @@ async function initScene(progress, opts = {}) {
     if (sketch) { const b = new THREE.Vector2(); renderer.getDrawingBufferSize(b); sketch.nrt.setSize(b.x, b.y); sketch.u.uRes.value.copy(b); }
   }
   addEventListener('resize', resize); resize();
+  if ('ResizeObserver' in window) new ResizeObserver(() => resize()).observe(canvas);
   let active = true, last = performance.now(), frames = [], firstFrame = true;
   const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   function frame(now) {
@@ -1771,8 +1774,8 @@ async function initScene(progress, opts = {}) {
     setHover(u) { if (hovered !== u) { hovered = u; paint(); } },
     setTime(hour, decl) { userTime = { hour, decl }; timeTween = null; if (mode !== 'story') SCENE.timeInfo = Object.assign(applyTime(hour, decl), { hour }); },
     zoom(dir) { if (mode === 'story') return; const d = camera.position.distanceTo(controls.target), nd = Math.min(controls.maxDistance, Math.max(controls.minDistance, d * (dir > 0 ? .8 : 1.25))); flyTo(controls.target.clone().add(camera.position.clone().sub(controls.target).setLength(nd)), controls.target.clone(), 500); },
-    projectPt(x, y, z) { _v.set(x, y, z).project(camera); return { x: (_v.x + 1) / 2 * innerWidth, y: (1 - _v.y) / 2 * (canvas.clientHeight || innerHeight), vis: _v.z < 1 && _v.z > -1 }; },
-    project(u) { _v.copy(u.center).project(camera); return { x: (_v.x + 1) / 2 * innerWidth, y: (1 - _v.y) / 2 * (canvas.clientHeight || innerHeight), vis: _v.z < 1 && _v.z > -1 }; },
+    projectPt(x, y, z) { _v.set(x, y, z).project(camera); return { x: (_v.x + 1) / 2 * (canvas.clientWidth || innerWidth), y: (1 - _v.y) / 2 * (canvas.clientHeight || innerHeight), vis: _v.z < 1 && _v.z > -1 }; },
+    project(u) { _v.copy(u.center).project(camera); return { x: (_v.x + 1) / 2 * (canvas.clientWidth || innerWidth), y: (1 - _v.y) / 2 * (canvas.clientHeight || innerHeight), vis: _v.z < 1 && _v.z > -1 }; },
     sunWindowFor: sunWindow,
   });
   Object.defineProperties(SCENE, { mode: { get: () => mode, configurable: true }, openFloor: { get: () => openFloor, configurable: true } });
