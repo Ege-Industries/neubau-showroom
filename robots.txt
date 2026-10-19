@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://neubaublick.de/sitemap.xml
+Disallow: /termin/
