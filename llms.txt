@@ -1,0 +1,36 @@
+# Neubaublick
+
+> Neubaublick baut 3D-Projektwebseiten für Bauträger und Neubauprojekte in Deutschland, Österreich und der Schweiz: ein 3D-Modell des Gebäudes aus den echten Plänen, echte Sonnenbahn am Standort, Wohnungsfinder mit Status, Grundriss und Preis, möblierte Etagen und eine Anfrage-Strecke, die jede Anfrage als Lead A, B oder C einordnet. Gründer und Ansprechpartner: Ege Pürgül, Mannheim.
+
+## Für wen
+- Bauträger, Projektentwickler und Vertriebe (auch Makler), die Eigentumswohnungen im Neubau verkaufen, oft schon vor Baubeginn.
+- Besonders sinnvoll zum Vermarktungsstart und wenn noch viele Wohnungen frei sind, auch für die letzten, schwer verkäuflichen Wohnungen.
+
+## Was die Projektseite kann
+- 3D-Modell des Projekts aus Grundrissen und Ansichten, läuft im Browser am Handy, Tablet und Rechner.
+- Echter Sonnenstand für den Standort: Käufer sehen Licht und Schatten zu jeder Tages- und Jahreszeit.
+- Wohnungsfinder: Etage öffnen, Wohnung wählen, Grundriss, Fläche, Preis und Status (frei, reserviert, verkauft).
+- Anfragen ohne Konto: Nutzung, Budget, Finanzierung und Kaufzeitpunkt werden abgefragt, der Vertrieb ruft zuerst die an, die kaufen können.
+- Antwort an Interessenten in 60 Sekunden, 3 kurze Werbevideos aus dem Modell, Pflege und Monatsbericht bis zum Abverkauf.
+- Keine Tracking-Cookies.
+
+## Kostenlose Vorschau
+- Jedes Projekt bekommt zuerst eine kostenlose, unverbindliche 3D-Vorschau in 48 Stunden. Dafür reicht der Projektname oder ein Link, mit Grundrissen wird sie genauer.
+- Aktion bis 30.11.2026: SEO- und GEO-Optimierung der Projektseite inklusive (gefunden bei Google und in KI-Antworten).
+- Den Preis der fertigen Seite bekommt der Bauträger nach der Vorschau schriftlich. Er hängt von Größe und Umfang des Projekts ab.
+- Anfrage: über die Startseite („Kostenlose Vorschau jetzt sichern“) oder per E-Mail an ege@neubaublick.de.
+
+## Garantien
+- Erst sehen, dann zahlen: kostenlose Vorschau des eigenen Projekts in 48 Stunden.
+- Mehr Anfragen pro 100 Besucher als die bisherige Seite in 60 Tagen bei gleichem Werbebudget, sonst kostenlose Nachbesserung und keine laufende Gebühr.
+- Live 4 Werktage nach Eingang der Unterlagen, sonst entfallen die ersten drei Monate der laufenden Gebühr.
+
+## Seiten
+- [Startseite mit Leistungen, Garantien und FAQ](https://neubaublick.de/)
+- [Live-Beispiel: Musterprojekt Lindenbühl (erfunden)](https://neubaublick.de/lindenbuehl/)
+- [Impressum](https://neubaublick.de/impressum/)
+- [English version (Offplanview)](https://offplanview.com/)
+
+## Kontakt
+- Ege Pürgül, Neubaublick, Ludwig-Jolly-Straße 50, 68169 Mannheim
+- E-Mail: ege@neubaublick.de
