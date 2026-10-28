@@ -682,6 +682,81 @@ html[data-pal="premium"] #gh2 stop:nth-child(1){stop-color:#9bb98c}html[data-pal
 html[data-pal="premium"] .sun-sky{filter:saturate(.7)}html[data-pal="premium"] .screen{background:linear-gradient(180deg,#7aa3cc,#d3e2ee 70%,#f2efe8)}
 html[data-pal="premium"] .ground,html[data-pal="premium"] .sun-hill{background:linear-gradient(180deg,#9bb98c,#47704f)}
 html[data-pal="premium"] .cube .f5{background:linear-gradient(135deg,#9bb98c,#47704f)}
+/* Social Media + KI-Rezeptionist (28.10.2026): 3D-Handy mit Reel, dreht sich beim Scrollen */
+.smx{overflow-x:clip}
+.smx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"a s" "b s";column-gap:clamp(30px,5vw,80px);row-gap:0;align-items:center}
+.smx-a{grid-area:a;align-self:end}.smx-b{grid-area:b;align-self:start}.smx-stage{grid-area:s}
+.smx-b .dchk{margin-top:22px}
+.smx-txt h2{font-size:clamp(2.6rem,5vw,4.8rem);margin:0 0 18px;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.smx-txt>p{color:var(--ink-2);font-size:1.1rem;max-width:44ch}
+.smx-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:26px 0 28px}
+.smx-trust div{background:var(--card);border:1px solid #fff;border-radius:18px;padding:13px 14px;box-shadow:var(--sh)}
+.smx-trust b{display:flex;gap:7px;align-items:center;font-size:.9rem;line-height:1.25;color:var(--ink)}
+.smx-trust b::before{content:"✓";flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:.62rem;color:#fff;background:radial-gradient(circle at 35% 28%,#d9ffc0 0 14%,#6cc644 55%,#2f8424)}
+.smx-trust small{display:block;margin-top:5px;color:var(--ink-2);font-size:.8rem;line-height:1.4}
+.smx-stage{position:relative;height:700px;perspective:1500px;display:grid;place-items:center}
+.smx-glow{position:absolute;left:50%;top:48%;width:min(560px,120%);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(127,211,255,.6),rgba(157,242,122,.18) 45%,rgba(127,211,255,0) 68%);pointer-events:none}
+.smx-floor{position:absolute;left:50%;bottom:16px;width:280px;height:44px;border-radius:50%;transform:translateX(-50%);background:radial-gradient(rgba(14,40,70,.38),rgba(14,40,70,0) 70%)}
+.smx-rig{position:relative;width:300px;height:620px;transform-style:preserve-3d;transform:rotateX(6deg) rotateY(-18deg);will-change:transform}
+.smx-l{position:absolute;inset:0;border-radius:50px;background:linear-gradient(135deg,#6b7684,#202833 38%,#0c1016);transform:translateZ(calc(var(--z) * 1px))}
+.smx-face{position:absolute;inset:0;border-radius:50px;padding:11px;background:#05080c;box-shadow:inset 0 0 0 1.5px #44505e,inset 0 0 0 4px #0b0f14;transform:translateZ(9px)}
+.smx-scr{position:relative;width:100%;height:100%;border-radius:40px;overflow:hidden;background:#0b1622}
+.smx-slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.smx-slide img{width:100%;height:100%;object-fit:cover;object-position:42% 50%;transform:scale(1.15)}
+.smx-slide.on{opacity:1}
+.smx-slide.on img{animation:smxkb 4.6s ease-out forwards}
+@keyframes smxkb{from{transform:scale(1.22) translateX(5%)}to{transform:scale(1.05) translateX(-3%)}}
+.smx-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 48%,rgba(0,0,0,.82) 100%)}
+.smx-notch{position:absolute;left:50%;top:10px;width:94px;height:27px;border-radius:15px;background:#000;transform:translateX(-50%);z-index:3}
+.smx-bars{position:absolute;top:46px;left:14px;right:14px;display:flex;gap:4px;z-index:2}
+.smx-bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.smx-bars i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.smx-bars i.done::after{transform:scaleX(1)}
+.smx-bars i.run::after{animation:smxbar 3.6s linear forwards}
+@keyframes smxbar{to{transform:scaleX(1)}}
+.smx-top{position:absolute;top:58px;left:16px;right:16px;display:flex;justify-content:space-between;color:#fff;font:800 .82rem var(--sans);z-index:2}
+.smx-side{position:absolute;right:10px;bottom:150px;display:grid;gap:15px;justify-items:center;color:#fff;font:700 .7rem var(--sans);z-index:2;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.smx-side span{display:grid;justify-items:center}
+.smx-side svg{width:28px;height:28px;display:block;margin-bottom:3px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.smx-cap{position:absolute;left:16px;right:60px;bottom:78px;color:#fff;z-index:2}
+.smx-who{display:flex;align-items:center;gap:8px;font:800 .8rem var(--sans);margin-bottom:8px}
+.smx-who small{font-weight:500;opacity:.8}
+.smx-av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#bfe9ff 0 12%,#3fb0f0 50%,#0b7fd0);box-shadow:0 0 0 2px #fff;font-size:.8rem}
+.smx-cap h3{font:800 1.22rem/1.15 var(--sans);margin:0 0 5px;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+.smx-cap p{font:500 .75rem/1.35 var(--sans);opacity:.92;margin:0;color:#fff}
+.smx-cta{position:absolute;left:14px;right:14px;bottom:22px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;font:800 .92rem var(--sans);background:linear-gradient(180deg,#4dbaf7,#0b7fd0);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 6px 16px -4px rgba(11,127,208,.6);z-index:2}
+.smx-hearts{position:absolute;right:14px;bottom:205px;width:44px;height:320px;pointer-events:none;z-index:2}
+.smx-hearts i{position:absolute;bottom:0;left:10px;font-style:normal;color:#ff5c7a;font-size:22px;animation:smxfly 2.4s ease-out forwards;text-shadow:0 2px 6px rgba(0,0,0,.3)}
+@keyframes smxfly{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1;transform:translate(-4px,-34px) scale(1.15)}100%{opacity:0;transform:translate(var(--dx,-14px),-280px) scale(.9)}}
+.smx-card{position:absolute;z-index:4;display:flex;gap:11px;align-items:flex-start;width:262px;padding:13px 15px;border-radius:20px;background:linear-gradient(180deg,#fff,#eef6fc);border:1px solid #fff;box-shadow:0 34px 50px -26px rgba(14,72,124,.6),0 4px 10px rgba(14,72,124,.12);font:500 .78rem/1.4 var(--sans);color:var(--ink-2);animation:smxbob 6s ease-in-out infinite}
+.smx-card b{display:block;color:var(--ink);font-weight:800;font-size:.85rem;margin-bottom:2px}
+.smx-card .ic{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.smx-card .ic svg{width:18px;height:18px}
+.smx-card.c1{left:-178px;top:118px;transform:translateZ(90px)}
+.smx-card.c1 .ic{background:radial-gradient(circle at 35% 28%,#d9ffc0 0 12%,#6cc644 55%,#2f8424)}
+.smx-card.c2{right:-172px;bottom:150px;width:228px;transform:translateZ(80px);animation-delay:-2s}
+.smx-card.c2 .ic{background:radial-gradient(circle at 35% 28%,#bfe9ff 0 12%,#3fb0f0 55%,#0b6fb8)}
+.smx-card.c3{right:-120px;top:-6px;width:auto;transform:translateZ(60px);animation-delay:-4s;align-items:center}
+.smx-card.c3 .pl{display:flex;gap:5px;flex-wrap:wrap}
+.smx-card.c3 .pl span{padding:4px 9px;border-radius:999px;background:#e5f2fc;color:var(--aqua-d);font:700 .7rem var(--sans)}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4fb03c;margin-right:6px;vertical-align:1px;box-shadow:0 0 0 0 rgba(79,176,60,.6);animation:smxpulse 1.8s infinite}
+@keyframes smxpulse{70%{box-shadow:0 0 0 7px rgba(79,176,60,0)}100%{box-shadow:0 0 0 0 rgba(79,176,60,0)}}
+@keyframes smxbob{50%{translate:0 -10px}}
+@media (max-width:1000px){.smx-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"a" "s" "b"}.smx-stage{height:660px}}
+@media (max-width:760px){
+  .smx-b .dchk{display:none}
+  .smx-trust{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:4px}
+  .smx-trust div{padding:10px 13px}
+  .smx-trust small{margin-top:2px}
+  .smx-stage{height:610px;margin:4px 0 0}
+  .smx-rig{scale:.8}
+  .smx-card{width:205px;font-size:.72rem;padding:10px 12px;gap:9px}
+  .smx-card .ic{width:30px;height:30px}
+  .smx-card.c1{left:-58px;top:70px}
+  .smx-card.c2{right:-58px;bottom:150px;width:190px}
+  .smx-card.c3{display:none}
+}
+@media (prefers-reduced-motion:reduce){.smx-card,.smx-slide.on img,.live-dot{animation:none}.smx-bars i.run::after{animation:none;transform:scaleX(1)}}
 </style>
 
 <div class="sky" aria-hidden="true"><div class="rays"></div><div class="glow"></div>
@@ -692,7 +767,7 @@ html[data-pal="premium"] .cube .f5{background:linear-gradient(135deg,#9bb98c,#47
 
 <header class="hdr" id="hdr">
   <a class="logo" href="#top" aria-label="Neubaublick, zum Seitenanfang"><span class="drop" aria-hidden="true"></span><span>Neubau<i>blick</i></span></a>
-  <nav class="nav" aria-label="Abschnitte"><a href="#beispiel">Beispiel</a><a href="#story">Wirkung</a><a href="#erlebnis">Erlebnis</a><a href="#vergleich">Vergleich</a><a href="#angebot">Angebot</a><a href="#fragen">Fragen</a></nav>
+  <nav class="nav" aria-label="Abschnitte"><a href="#beispiel">Beispiel</a><a href="#social">Social</a><a href="#story">Wirkung</a><a href="#erlebnis">Erlebnis</a><a href="#vergleich">Vergleich</a><a href="#angebot">Angebot</a><a href="#fragen">Fragen</a></nav>
   <span class="hbtns"><a class="btn pearl sm langb" href="https://offplanview.com/" data-lang="en" hreflang="en" title="English version">EN</a><a class="btn pearl sm hdemo" data-demo href="#" target="_blank" rel="noopener"><span>Live-Beispiel</span><i class="ar">↗</i></a><a class="btn aqua sm" data-vorschau href="#vorschau"><span>Vorschau sichern</span><i class="ar">↗</i></a></span>
 </header>
 
@@ -741,6 +816,50 @@ html[data-pal="premium"] .cube .f5{background:linear-gradient(135deg,#9bb98c,#47
         <p>Ein Musterprojekt, genau so, wie Ihre Seite aussehen wird: Gebäude drehen, Tageszeit wählen, Etage öffnen, Wohnung anfragen. Am besten am Handy ausprobieren.</p>
         <ul class="dchk"><li>3D-Modell mit Sonnenstand</li><li>Möblierte Etagen und Wohnungen</li><li>Wohnungsfinder und Anfrageformular</li></ul>
         <div class="cta-row"><a class="btn aqua" data-demo href="#" target="_blank" rel="noopener"><span>Beispiel live öffnen</span><i class="ar">↗</i></a><a class="btn pearl" data-vorschau href="#vorschau"><span>So etwas für mein Projekt</span><i class="ar">›</i></a></div></div>
+    </div>
+  </section>
+
+  <section class="sec wrap smx" id="social" aria-label="Social Media und KI-Rezeptionist">
+    <div class="smx-grid">
+      <div class="smx-txt smx-a rv"><span class="kick">3D, Social Media und KI</span>
+        <h2>Ihr Projekt im Feed, <em>bevor der Kran steht.</em></h2>
+        <p>Ihre 3D-Projektseite ist der Mittelpunkt. Aus dem 3D-Modell entstehen jede Woche Reels: Rundflug, Sonnenverlauf, Wohnungen von innen. Gezielte Anzeigen bringen Käufer direkt auf Ihre 3D-Projektseite. Und ein KI-Rezeptionist nimmt jeden Anruf an, auch abends und am Wochenende.</p>
+      </div>
+      <div class="smx-txt smx-b rv">
+        <ul class="dchk"><li>Reels und Beiträge jede Woche, ohne Drehtag</li><li>Anzeigen für Eigennutzer und Kapitalanleger</li><li>KI-Rezeptionist beantwortet Fragen, trägt Besichtigungen ein</li><li>Monatsbericht mit Kosten pro Anfrage</li></ul>
+        <div class="smx-trust">
+          <div><b>Ihr Werbekonto, Ihr Budget</b><small>Sie behalten jederzeit die volle Kontrolle.</small></div>
+          <div><b>Alle Inhalte gehören Ihnen</b><small>Auch für Exposé, Bauschild und Messe.</small></div>
+          <div><b>Ziel vorab festgelegt</b><small>Nicht erreicht? Wir arbeiten kostenlos weiter.</small></div>
+        </div>
+        <div class="cta-row"><a class="btn aqua" data-vorschau href="#vorschau"><span>Kostenlose Vorschau<span class="jz"> jetzt</span> sichern</span><i class="ar">↗</i></a><a class="btn pearl" data-book href="#termin"><span>Lieber erst sprechen</span><i class="ar">↗</i></a></div>
+      </div>
+      <div class="smx-stage" id="smxStage" aria-hidden="true">
+        <div class="smx-glow"></div><div class="smx-floor"></div>
+        <div class="smx-rig" id="smxRig">
+          <i class="smx-l" style="--z:-8"></i><i class="smx-l" style="--z:-7"></i><i class="smx-l" style="--z:-6"></i><i class="smx-l" style="--z:-5"></i><i class="smx-l" style="--z:-4"></i><i class="smx-l" style="--z:-3"></i><i class="smx-l" style="--z:-2"></i><i class="smx-l" style="--z:-1"></i>
+          <i class="smx-l" style="--z:0"></i><i class="smx-l" style="--z:1"></i><i class="smx-l" style="--z:2"></i><i class="smx-l" style="--z:3"></i><i class="smx-l" style="--z:4"></i><i class="smx-l" style="--z:5"></i><i class="smx-l" style="--z:6"></i><i class="smx-l" style="--z:7"></i><i class="smx-l" style="--z:8"></i>
+          <div class="smx-face"><div class="smx-scr">
+            <div class="smx-slide on"><img src="img/t-07.jpg" alt="" loading="lazy"></div><div class="smx-slide"><img src="img/t-13.jpg" alt="" loading="lazy"></div>
+            <div class="smx-slide"><img src="img/t-19.jpg" alt="" loading="lazy"></div><div class="smx-slide"><img src="img/t-22.jpg" alt="" loading="lazy"></div>
+            <div class="smx-shade"></div><div class="smx-notch"></div>
+            <div class="smx-bars"><i class="run"></i><i></i><i></i><i></i></div>
+            <div class="smx-top"><span>Reels</span><span>9:41</span></div>
+            <div class="smx-side">
+              <span><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.6.7-1.4 2.3-2.6 4.3-2.6 3.7 0 5.8 3.8 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg><b id="smxLikes">2.481</b></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 12a8 8 0 1 1-3.2-6.4L21 4l-1 4.2A8 8 0 0 1 20 12z"/></svg>164</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M22 3 11 13M22 3l-7 18-4-8-8-4z"/></svg>Teilen</span>
+            </div>
+            <div class="smx-hearts" id="smxHearts"></div>
+            <div class="smx-cap"><div class="smx-who"><span class="smx-av">N</span>Ihr Projekt <small>· Gesponsert</small></div>
+              <h3 id="smxCap">Morgensonne auf der Terrasse</h3><p id="smxSub">07:00 Uhr · 3 Zimmer · Balkon Ost · frei</p></div>
+            <div class="smx-cta">Jetzt Wohnung finden →</div>
+          </div></div>
+          <div class="smx-card c1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Neue Anfrage</b>Lead A · 3 Zimmer · Eigennutzer · Finanzierung bestätigt · kam über das Reel</div></div>
+          <div class="smx-card c2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><b><span class="live-dot"></span>KI-Rezeptionist · 21:47 Uhr</b>Anruf angenommen, Fragen beantwortet, Besichtigung Samstag 11 Uhr eingetragen.</div></div>
+          <div class="smx-card c3"><div class="pl"><span>Instagram</span><span>Facebook</span><span>LinkedIn</span><span>TikTok</span></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1587,5 +1706,42 @@ async function initGL() {
 onScroll();
 initGL().catch(err => { console.error(err); clearInterval(creep); $('#glw').remove(); $('#hud').remove(); $('#hint').remove(); $('#loader') && $('#loader').remove(); });
 
+</script>
+<script>/* Social-Abschnitt: Reel wechselt von selbst, Handy dreht sich beim Scrollen (keine Regler) */
+(function () {
+  var st = document.getElementById('smxStage'); if (!st) return;
+  var rig = document.getElementById('smxRig'), cap = document.getElementById('smxCap'), sub = document.getElementById('smxSub');
+  var likesEl = document.getElementById('smxLikes'), hearts = document.getElementById('smxHearts');
+  var slides = st.querySelectorAll('.smx-slide'), bars = st.querySelectorAll('.smx-bars i');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var texte = [['Morgensonne auf der Terrasse', '07:00 Uhr · 3 Zimmer · Balkon Ost · frei'], ['Mittags im Grünen', '13:00 Uhr · Gartenwohnung · 4 Zimmer'],
+               ['Abendsonne auf dem Balkon', '19:00 Uhr · Penthouse mit Dachterrasse'], ['Ihr Zuhause bei Nacht', '22:00 Uhr · Jetzt Wohnung finden']];
+  var n = 0, likes = 2481, sichtbar = false, mx = 0, my = 0;
+  function zeige(k) {
+    slides.forEach(function (s, j) { s.classList.toggle('on', j === k); });
+    bars.forEach(function (b, j) { b.classList.toggle('done', j < k); b.classList.toggle('run', j === k); });
+    cap.textContent = texte[k][0]; sub.textContent = texte[k][1];
+  }
+  function herz() {
+    var h = document.createElement('i'); h.textContent = '♥';
+    h.style.setProperty('--dx', (Math.random() * 30 - 22).toFixed(0) + 'px'); h.style.left = (4 + Math.random() * 14).toFixed(0) + 'px';
+    hearts.appendChild(h); setTimeout(function () { h.remove(); }, 2500);
+    likes += 1 + Math.floor(Math.random() * 3); likesEl.textContent = likes.toLocaleString('de-DE');
+  }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { sichtbar = es[0].isIntersecting; }, { rootMargin: '100px' }).observe(st);
+  else sichtbar = true;
+  if (reduce) return;
+  setInterval(function () { if (sichtbar) { n = (n + 1) % slides.length; zeige(n); } }, 3600);
+  setInterval(function () { if (sichtbar) herz(); }, 650);
+  addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse') { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; } }, { passive: true });
+  (function dreh(t) {
+    if (sichtbar) {
+      var r = st.getBoundingClientRect(), p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height)));
+      var ry = -30 + p * 40 + Math.sin(t / 1600) * 3 + mx * 10, rx = 9 - p * 7 + Math.cos(t / 2100) * 1.5 - my * 6;
+      rig.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+    }
+    requestAnimationFrame(dreh);
+  })(0);
+})();
 </script>
 </body></html>
