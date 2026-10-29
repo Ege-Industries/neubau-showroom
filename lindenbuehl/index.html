@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eef0eb"><meta name="description" content="Lindenbühl, Heidelberg-Rohrbach: 24 Eigentumswohnungen in 3D. Wohnungsfinder mit möblierten Etagen und geführtem Rundgang durch jede Wohnung. Musterprojekt von Neubaublick."><title>Lindenbühl Musterprojekt | Neubaublick</title><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="alternate" hreflang="de" href="https://neubaublick.de/lindenbuehl/"><link rel="alternate" hreflang="en" href="https://offplanview.com/lindenbuehl/"><link rel="canonical" href="https://neubaublick.de/lindenbuehl/"><meta name="generator" content="Vorlage 2.1">
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eef0eb"><meta name="description" content="Lindenbühl, Heidelberg-Rohrbach: 24 Eigentumswohnungen in 3D. Wohnungsfinder mit möblierten Etagen und geführtem Rundgang durch jede Wohnung. Musterprojekt von Neubaublick."><title>Lindenbühl Musterprojekt | Neubaublick</title><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="alternate" hreflang="de" href="https://neubaublick.de/lindenbuehl/"><link rel="alternate" hreflang="en" href="https://offplanview.com/lindenbuehl/"><link rel="canonical" href="https://neubaublick.de/lindenbuehl/"><meta name="generator" content="Vorlage 2.2">
 <link rel="stylesheet" href="../fonts/demo.css">
 <style>
 /* Layout: Die 3D-Szene liegt fest hinter der ganzen Seite. Hero und „Ein Tag“ sind durchsichtig, der Wohnungsfinder legt ein Glaspanel
@@ -298,6 +298,18 @@ html.lock .shade{opacity:0!important}
 .t-ctrl .iconbtn[disabled]{opacity:.4;cursor:default}
 .t-tip{font-size:.74rem;color:var(--muted);line-height:1.3;max-width:20ch;text-align:right}
 .m-only{display:none}
+.m-lab{display:none}
+.u-hint{margin:0;padding:10px 20px 0;font-size:.84rem;color:var(--muted)}
+.resume{position:absolute;left:50%;bottom:calc(var(--sh,0px) + 14px);transform:translateX(-50%);display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);font:600 .98rem var(--sans);box-shadow:0 14px 34px rgba(19,32,26,.28);cursor:pointer;z-index:6;white-space:nowrap}
+.intro{position:absolute;inset:0;z-index:20;display:grid;place-items:center;padding:16px;background:rgba(19,32,26,.32);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.intro-in{width:min(440px,100%);background:var(--paper);border-radius:24px;padding:24px 22px 20px;display:grid;gap:12px;box-shadow:0 30px 80px rgba(19,32,26,.3)}
+.intro-in h3{font:400 1.7rem/1.08 var(--serif);margin:0}
+.intro-st{list-style:none;margin:4px 0;padding:0;display:grid;gap:14px}
+.intro-st li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.intro-st b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper);font:600 1rem var(--sans)}
+.intro-st span{font-size:.95rem;line-height:1.45;color:var(--ink-2)}
+.intro-st strong{display:block;color:var(--ink);font-size:1.02rem}
+.intro-in .btn{justify-self:stretch;justify-content:center;padding:14px 18px;font-size:1rem}
 .t-plan{display:block;width:100%;background:#fbfbf8;border:1px solid var(--line);border-radius:14px;padding:8px;position:relative}
 .t-plan svg{width:100%;height:auto;display:block;max-height:min(300px,32vh)}
 .t-plan .linkbtn{position:absolute;right:10px;bottom:8px}
@@ -455,7 +467,30 @@ html.lock .shade{opacity:0!important}
   .t-extra .btn{padding:8px 12px;font-size:.82rem}
   .t-tip{display:none}
   .m-only{display:inline-flex}
-  .t-ctrl .btn.m-only{padding:10px 14px;font-size:.86rem}
+  /* V2-HANDYBLATT: Rundgang-Blatt kompakt, damit man die Wohnung sieht */
+  .uh{gap:4px;padding-top:0;padding-bottom:6px}
+  .uh .u-name .lbl{display:none}
+  .uh .u-nav .back{font-size:.7rem}
+  .uh .u-name h3{font-size:1.25rem}
+  .uh .u-top{align-items:center}
+  .uh .u-price{display:flex;align-items:center;gap:8px}
+  .uh .u-price b{font-size:1.1rem}
+  .uh .u-price .st{font-size:.6rem;margin-top:0}
+  .tbox{padding:8px 18px 12px;gap:7px}
+  .t-step{gap:3px}
+  .t-time{font-size:.6rem}
+  .t-step h4{font-size:1.2rem}
+  .t-sub{display:none}
+  .t-body{-webkit-line-clamp:2;font-size:.86rem;line-height:1.45}
+  .t-ctrl .iconbtn{width:44px;height:44px}
+  .t-ctrl #t-next{width:auto;padding:0 14px 0 18px;gap:4px;border-radius:999px;display:inline-flex;background:var(--ink);color:var(--paper);border-color:var(--ink);font:600 .92rem var(--sans)}
+  .t-ctrl #t-next[disabled]{background:rgba(255,255,255,.75);color:var(--ink);border-color:var(--line)}
+  .m-lab{display:inline}
+  /* V2-LISTE: Filter eingeklappt, mehr Platz für Haus und Liste */
+  .filters{display:none}
+  .filters.open{display:grid}
+  .u-hint{padding:8px 18px 0;font-size:.82rem}
+  .t-ctrl .btn.m-only{padding:11px 16px;font-size:.9rem}
   .t-plan svg{max-height:40vh}
   .flow .actions .btn{flex:1}
   .lightbox{padding:0;place-items:end stretch}
@@ -695,6 +730,12 @@ html.lock,html.lock body{overflow:hidden;overscroll-behavior:none}
     <div class="pbody" id="pbody"></div>
   </aside>
   <div class="f-hint" id="f-hint" hidden></div>
+  <button class="resume" id="t-resume" type="button" hidden><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.5v9l7.5-4.5z" fill="currentColor"/></svg>Führung fortsetzen</button>
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-t" hidden><div class="intro-in">
+    <span class="lbl">So geht's</span><h3 id="intro-t">In drei Schritten zu Ihrer Wohnung</h3>
+    <ol class="intro-st" id="intro-st"></ol>
+    <button class="btn" id="intro-ok" type="button">Los geht's</button>
+  </div></div>
 </div>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-t" hidden>
   <div class="lb-in">
@@ -1295,11 +1336,21 @@ async function initScene(progress, opts = {}) {
   // Im Finder (Vollbild) gehört die Maus bzw. der Finger dem Modell: drehen, zoomen zum Mauszeiger, am Boden verschieben.
   // Auf der Seite (Geschichte) scrollt der Finger die Seite.
   controls.zoomToCursor = true; controls.screenSpacePanning = false; controls.panSpeed = .9; controls.zoomSpeed = 1.1;
+  // Handy (V2-FINGER): Der Finger dreht nur rundum und zoomt ein wenig. Kein Verschieben, kein Hinfliegen, kein weites Herauszoomen:
+  // Bildmitte und Standpunkt bleiben, wie die Führung sie gesetzt hat. Ältere Besucher haben sich sonst im Modell verloren.
+  const FINGER = mobile;
+  if (FINGER) { controls.zoomToCursor = false; controls.rotateSpeed = .7; }
+  function lockView() {
+    if (!FINGER || mode === 'story') return;
+    const d = camera.position.distanceTo(controls.target), ph = controls.getPolarAngle();
+    controls.minDistance = d * .72; controls.maxDistance = d * 1.15;
+    controls.minPolarAngle = Math.max(.15, ph - .35); controls.maxPolarAngle = Math.min(1.36, ph + .3);
+  }
   let interactive = false;
   const applyTouch = () => {
     const on = interactive && mode !== 'story';
     canvas.style.touchAction = on ? 'none' : 'pan-y';
-    controls.enableZoom = controls.enablePan = on;
+    controls.enableZoom = on; controls.enablePan = on && !FINGER;
   };
   canvas.style.touchAction = 'pan-y';
 
@@ -2009,13 +2060,13 @@ async function initScene(progress, opts = {}) {
   }
   // Flug auf einem Bogen um den Zielpunkt: Richtung, Höhenwinkel und Abstand gleiten getrennt.
   // Eine gerade Linie kann dicht am Zielpunkt vorbeiführen, dann dreht der Blick schlagartig.
-  function flyTo(p, t, dur = 1100) {
+  function flyTo(p, t, dur = 1100, keep = false) {   // keep: Zoom des Besuchers, Spielraum am Handy nicht neu setzen
     controls.enabled = false;
     drainInertia();
-    if (reduce) { camera.position.copy(p); controls.target.copy(t); camera.lookAt(t); camera.fov = baseFov(); camera.updateProjectionMatrix(); controls.enabled = interactive && mode !== 'story'; SCENE.onArrive && setTimeout(() => SCENE.onArrive(), 0); return; }
+    if (reduce) { camera.position.copy(p); controls.target.copy(t); camera.lookAt(t); camera.fov = baseFov(); camera.updateProjectionMatrix(); controls.enabled = interactive && mode !== 'story'; if (!keep) lockView(); SCENE.onArrive && setTimeout(() => SCENE.onArrive(), 0); return; }
     const s0 = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target)), s1 = new THREE.Spherical().setFromVector3(p.clone().sub(t));
     const dth = Math.atan2(Math.sin(s1.theta - s0.theta), Math.cos(s1.theta - s0.theta));
-    tween = { t0: performance.now(), d: dur, ft: controls.target.clone(), tt: t.clone(), s0, s1, dth, ff: camera.fov, tf: baseFov() };
+    tween = { t0: performance.now(), d: dur, ft: controls.target.clone(), tt: t.clone(), s0, s1, dth, ff: camera.fov, tf: baseFov(), keep };
   }
   const _sph = new THREE.Spherical();
   /* Sichtbarer Bereich: Die Oberfläche meldet, wie viel Rand Panels und Leisten verdecken. Danach richten sich Bildmitte und Abstand. */
@@ -2307,7 +2358,7 @@ async function initScene(progress, opts = {}) {
   });
   // Doppelklick: zu dem Punkt fliegen (auf dem Boden oder auf der offenen Etage), Blickrichtung bleibt
   canvas.addEventListener('dblclick', e => {
-    if (mode === 'story' || !interactive || tween || walk) return;
+    if (mode === 'story' || !interactive || tween || walk || FINGER) return;
     if ((mode === 'explore' || mode === 'floor') && pick(e)) return;
     const r = canvas.getBoundingClientRect();
     ptr.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
@@ -2334,7 +2385,7 @@ async function initScene(progress, opts = {}) {
     if (downAt && e.buttons && walk.drag) {
       const k = .0042 * walk.fov / 70;
       if (walk.anim && Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 7) { walk.anim = null; walk.fov = camera.fov; walk.drag = { yaw: walk.yaw, pitch: walk.pitch }; downAt = [e.clientX, e.clientY]; }
-      if (!walk.anim) { walk.aim = null; walk.yv = walk.pv = 0; walk.yaw = walk.drag.yaw + (e.clientX - downAt[0]) * k; walk.pitch = Math.max(-1.2, Math.min(1.1, walk.drag.pitch + (e.clientY - downAt[1]) * k)); }
+      if (!walk.anim) { walk.aim = null; walk.yv = walk.pv = 0; walk.yaw = walk.drag.yaw + (e.clientX - downAt[0]) * k; walk.pitch = Math.max(FINGER ? -.6 : -1.2, Math.min(FINGER ? .5 : 1.1, walk.drag.pitch + (e.clientY - downAt[1]) * k)); }
       ring.visible = false; return;
     }
     if (e.pointerType !== 'mouse') return;
@@ -2352,7 +2403,7 @@ async function initScene(progress, opts = {}) {
   canvas.addEventListener('pointerup', e => {
     if (walk) { walk.drag = null; canvas.style.cursor = 'grab'; }
     if (mode === 'story' || !interactive || !downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 7) return;
-    if (walk) { const p = walkHit(e); if (p && SCENE.canWalk && SCENE.canWalk(p) && SCENE.onWalkClick) SCENE.onWalkClick(p); return; }
+    if (walk) { if (e.pointerType === 'touch') return; const p = walkHit(e); if (p && SCENE.canWalk && SCENE.canWalk(p) && SCENE.onWalkClick) SCENE.onWalkClick(p); return; }
     if (mode === 'tour') { const p = pickRoom(e); if (p && SCENE.onRoomClick) SCENE.onRoomClick(p); return; }
     const u = pick(e); if (u && SCENE.onClick) SCENE.onClick(u);
   });
@@ -2401,7 +2452,7 @@ async function initScene(progress, opts = {}) {
         _sph.set(r0 * Math.pow(Math.max(.05, s1.radius) / r0, kk), s0.phi + (s1.phi - s0.phi) * kk, s0.theta + tween.dth * kk);
         camera.position.setFromSpherical(_sph).add(controls.target); camera.lookAt(controls.target);
         if (tween.ff !== tween.tf) { camera.fov = tween.ff + (tween.tf - tween.ff) * kk; camera.updateProjectionMatrix(); }
-        if (t >= 1) { tween = null; controls.enabled = interactive; SCENE.onArrive && SCENE.onArrive(); }
+        if (t >= 1) { const keep = tween.keep; tween = null; controls.enabled = interactive; if (!keep) lockView(); SCENE.onArrive && SCENE.onArrive(); }
       } else { controls.update(); keepInBounds(); }
       if (Math.abs(hlFade - hlTarget) > .001) {
         hlFade += (hlTarget - hlFade) * (reduce ? 1 : 1 - Math.exp(-dt * 5));
@@ -2451,7 +2502,7 @@ async function initScene(progress, opts = {}) {
     setHover(u) { if (hovered !== u) { hovered = u; paint(); } },
     setTime(hour, decl) { userTime = { hour, decl }; timeTween = null; if (mode !== 'story') SCENE.timeInfo = Object.assign(applyTime(hour, decl), { hour }); },
     animateTime(hour, decl = 23.44, dur = 1600) { userTime = { hour, decl }; if (mode === 'story') return; if (reduce) { SCENE.timeInfo = Object.assign(applyTime(hour, decl), { hour }); return; } timeTween = { t0: performance.now(), d: dur, fh: cur.hour, th: hour, decl }; },
-    zoom(dir) { if (mode === 'story') return; if (walk) { walk.anim = null; walk.fov = Math.min(95, Math.max(32, walk.fov * (dir > 0 ? .82 : 1.22))); camera.fov = walk.fov; camera.updateProjectionMatrix(); return; } const d = camera.position.distanceTo(controls.target), nd = Math.min(controls.maxDistance, Math.max(controls.minDistance, d * (dir > 0 ? .8 : 1.25))); flyTo(controls.target.clone().add(camera.position.clone().sub(controls.target).setLength(nd)), controls.target.clone(), 500); },
+    zoom(dir) { if (mode === 'story') return; if (walk) { walk.anim = null; walk.fov = Math.min(FINGER ? 80 : 95, Math.max(FINGER ? 46 : 32, walk.fov * (dir > 0 ? .82 : 1.22))); camera.fov = walk.fov; camera.updateProjectionMatrix(); return; } const d = camera.position.distanceTo(controls.target), nd = Math.min(controls.maxDistance, Math.max(controls.minDistance, d * (dir > 0 ? .8 : 1.25))); flyTo(controls.target.clone().add(camera.position.clone().sub(controls.target).setLength(nd)), controls.target.clone(), 500, true); },
     setInsets(o) { const n = { t: o.t || 0, r: o.r || 0, b: o.b || 0, l: o.l || 0 }; if (n.t === insets.t && n.r === insets.r && n.b === insets.b && n.l === insets.l) return false; insets = n; return true; },
     setInteractive(on) { interactive = !!on; if (!tween) controls.enabled = interactive && mode !== 'story'; applyTouch(); if (!on && hovered) { hovered = null; paint(); } },
     previewFloor(bid, f) { const n = bid ? { bid, f } : null; if (JSON.stringify(n) !== JSON.stringify(previewF)) { previewF = n; paint(); } },
@@ -2611,7 +2662,7 @@ const countTxt = (n, total) => `<b>${n}</b> von ${total}`;
 function chipsHTML() {
   const typ = ui.typ ? `<button class="pillbtn" data-typclear aria-pressed="true" aria-label="Filter ${typPl(ui.typ)} entfernen">${typPl(ui.typ)} <span class="x" aria-hidden="true">×</span></button>` : '';
   const z = [[0, 'Alle'], [2, '2 Zimmer'], [3, '3 Zimmer'], [4, '4+ Zimmer']].map(([v, t]) => `<button class="pillbtn" data-zi="${v}" aria-pressed="${!ui.nurMerk && ui.zi === v}">${t}</button>`).join('');
-  return typ + z + `<button class="pillbtn" data-merkf aria-pressed="${ui.nurMerk}" ${merk.size ? '' : 'disabled title="Tippen Sie bei einer Wohnung auf das Herz"'}>${ICON.heart.replace('width="18" height="18"', 'width="14" height="14"')} Merkliste <span class="n">${merk.size}</span></button>`;
+  return typ + z + `<button class="pillbtn m-only" data-act="moref" aria-expanded="${!!ui.moreF}">Preis und mehr ${ui.moreF ? '▴' : '▾'}</button><button class="pillbtn" data-merkf aria-pressed="${ui.nurMerk}" ${merk.size ? '' : 'disabled title="Tippen Sie bei einer Wohnung auf das Herz"'}>${ICON.heart.replace('width="18" height="18"', 'width="14" height="14"')} Merkliste <span class="n">${merk.size}</span></button>`;
 }
 function card(u) {
   const sold = u.status === 'verkauft', m = merk.has(u.nr);
@@ -2637,11 +2688,12 @@ function listHTML() {
         <span class="count" id="count" aria-live="polite">${countTxt(list.length, total)}</span></div>
       <div class="chipbar scroll" id="chips" aria-label="Filter">${chipsHTML()}</div>
     </div>
-    <div class="p-sec filters">
+    <div class="p-sec filters${ui.moreF ? ' open' : ''}" id="filters">
       <div class="range"><label for="f-preis"><span>Kaufpreis bis</span><b class="mono" id="f-preis-v">${eur(ui.maxPreis)}</b></label><input type="range" id="f-preis" min="${PMIN}" max="${PMAX}" step="10000" value="${ui.maxPreis}"></div>
       <div class="frow2"><label class="switch"><input type="checkbox" id="f-frei" ${ui.nurFrei ? 'checked' : ''}><i></i>Nur freie Wohnungen</label>
         <select class="sortsel" id="f-sort" aria-label="Sortieren">${Object.entries(SORTS).map(([k, [t]]) => `<option value="${k}" ${ui.sort === k ? 'selected' : ''}>${t}</option>`).join('')}</select></div>
     </div>
+    <p class="u-hint">${isMob() ? 'Tippen' : 'Klicken'} Sie auf eine Wohnung. Wir führen Sie dann Raum für Raum hindurch. <button class="linkbtn" data-act="intro">So geht's</button></p>
     <div class="units" id="ulist">${unitsHTML(list)}</div>`;
 }
 function updateChips() { const c = $('#chips'); if (c) c.innerHTML = chipsHTML(); }
@@ -2769,6 +2821,7 @@ function renderPanel() {
   const body = $('#pbody');
   F.classList.toggle('unitmode', ui.view !== 'list');
   $('#viewtog').hidden = !(isMob() && ui.view === 'unit');
+  $('#t-resume').hidden = true;
   if (ui.view === 'list') body.innerHTML = listHTML();
   else if (ui.view === 'unit') { body.innerHTML = unitHTML(ui.unit); tourPaint(); }
   else if (ui.view === 'ask') { body.innerHTML = askHTML(ui.unit, ui.askStep); fillAsk(); }
@@ -2792,6 +2845,8 @@ P.addEventListener('click', e => {
   const u = ui.unit;
   switch (t.dataset.act || t.id) {
     case 'reset': resetFilters(); break;
+    case 'intro': showIntro(); break;
+    case 'moref': ui.moreF = !ui.moreF; $('#filters').classList.toggle('open', ui.moreF); updateChips(); if (ui.moreF && ui.sheet === 'peek') setSheet('half'); break;
     case 'all': goOverview(); break;
     case 'back': backFromUnit(); break;
     case 'uprev': case 'unext': { const nl = navList(u), i = nl.indexOf(u), n = nl[(i + (t.dataset.act === 'unext' ? 1 : -1) + nl.length) % nl.length]; selectUnit(n, { ret: ui.ret }); break; }
@@ -2885,7 +2940,7 @@ function openFinder(o = {}) {
 }
 function afterOpen(sync) {
   if (sc()) { SCENE.setActive(true); SCENE.setInteractive(true); if (sync) syncScene(); }
-  showHint();
+  if (ui.view === 'list' && !introSeen()) showIntro(); else showHint();
   requestAnimationFrame(() => { const c = $('#f-close'); if (c && !isMob()) c.focus({ preventScroll: true }); });
 }
 function closeFinder(fromPop) {
@@ -2924,7 +2979,7 @@ function sheetStops() {
   const end = ui.view === 'unit' ? $('#pbody .t-ctrl') : $('#pbody .ph');
   if (end) peek = 24 + (end.getBoundingClientRect().bottom - body.getBoundingClientRect().top + body.scrollTop) + (ui.view === 'unit' ? 12 : 6);
   peek = Math.min(full, Math.round(peek));
-  const half = Math.min(full, Math.max(peek + 60, Math.round(vh * .52)));
+  const half = Math.min(full, Math.max(peek + 60, Math.round(vh * .46)));   // V2-HANDYBLATT: vorher 52 %, das Haus war kaum zu sehen
   return { peek, half, full };
 }
 function setSheet(state, animate = true) {
@@ -2933,7 +2988,7 @@ function setSheet(state, animate = true) {
   const s = sheetStops(), p = $('#panel');
   sheetH = s[state] || s.half;
   p.classList.toggle('drag', !animate);
-  p.style.setProperty('--sh', sheetH + 'px');
+  F.style.setProperty('--sh', sheetH + 'px');   // am Finder, damit auch „Führung fortsetzen“ darüber sitzt
   updateInsets();
 }
 function snapSheet(h, v) {
@@ -2956,7 +3011,7 @@ addEventListener('pointermove', e => {
   if (!sheetDrag.moved) { sheetDrag.moved = true; $('#panel').classList.add('drag'); try { $('#panel').setPointerCapture(e.pointerId); } catch (er) { /* egal */ } }
   const s = sheetStops(), h = Math.max(s.peek * .7, Math.min(s.full, sheetDrag.h0 - dy));
   const now = performance.now(); sheetDrag.v = (e.clientY - sheetDrag.last) / Math.max(1, now - sheetDrag.lt); sheetDrag.last = e.clientY; sheetDrag.lt = now;
-  $('#panel').style.setProperty('--sh', h + 'px'); sheetH = h;
+  F.style.setProperty('--sh', h + 'px'); sheetH = h;
 });
 function endSheetDrag(e) {
   if (!sheetDrag.on || (e && e.pointerId !== sheetDrag.id)) return;
@@ -3049,9 +3104,9 @@ function toast(t) { const el = $('#toast'); el.textContent = t; el.hidden = fals
 // Steuerung erklären: beim ersten Öffnen kurz, über „?“ jederzeit
 let hinted = false, hintT = null;
 const HINT_D = '<span><kbd>Ziehen</kbd> drehen</span><span><kbd>Mausrad</kbd> zoomen</span><span><kbd>Rechte Maustaste</kbd> verschieben</span><span><kbd>Doppelklick</kbd> hinfliegen</span>';
-const HINT_M = '<span><kbd>1 Finger</kbd> drehen</span><span><kbd>2 Finger</kbd> zoomen und verschieben</span>';
+const HINT_M = '<span><kbd>1 Finger</kbd> rundum drehen</span><span><kbd>2 Finger</kbd> näher heran</span><span><kbd>Antippen</kbd> Wohnung öffnen</span>';
 const HINT_WD = '<span><kbd>Ziehen</kbd> umsehen</span><span><kbd>Klick auf den Boden</kbd> hingehen</span><span><kbd>Mausrad</kbd> zoomen</span>';
-const HINT_WM = '<span><kbd>Wischen</kbd> umsehen</span><span><kbd>Tippen auf den Boden</kbd> hingehen</span>';
+const HINT_WM = '<span><kbd>Wischen</kbd> umsehen</span><span><kbd>Weiter</kbd> nächster Raum</span>';
 function showHint(force, kind) {
   if (!sc() || (hinted && !force)) return; hinted = true;
   const el = $('#f-hint'), w = kind === 'walk' || (!kind && TOUR.on && TOUR.at);
@@ -3060,6 +3115,22 @@ function showHint(force, kind) {
   el.hidden = false; el.classList.remove('off'); $('#vhelp').setAttribute('aria-expanded', 'true');
   clearTimeout(hintT); hintT = setTimeout(hideHint, force ? 6000 : 5000);
 }
+/* „So geht's“: drei Schritte, beim ersten Öffnen und über „?“ (Handy) */
+const INTRO_KEY = 'sogehts-' + PROJECT.name.toLowerCase();
+function introSeen() { try { return !!localStorage.getItem(INTRO_KEY) || !!window.__RENDER; } catch (e) { return false; } }
+function showIntro() {
+  const m = isMob();
+  $('#intro-st').innerHTML = [
+    ['Wohnung wählen', `${m ? 'Tippen' : 'Klicken'} Sie unten in der Liste oder direkt am Haus auf eine Wohnung.`],
+    ['Zurücklehnen', `Wir führen Sie Raum für Raum hindurch. ${m ? 'Mit dem Finger wischen' : 'Mit gedrückter Maus ziehen'}: umsehen. „Weiter“: nächster Raum.`],
+    ['Exposé anfordern', 'Kostenlos und ohne Konto, in unter einer Minute.'],
+  ].map(([t, d], i) => `<li><b>${i + 1}</b><span><strong>${t}</strong>${d}</span></li>`).join('');
+  $('#intro').hidden = false; requestAnimationFrame(() => $('#intro-ok').focus({ preventScroll: true }));
+}
+function closeIntro() { $('#intro').hidden = true; try { localStorage.setItem(INTRO_KEY, '1'); } catch (e) { /* egal */ } }
+$('#intro-ok').addEventListener('click', closeIntro);
+$('#intro').addEventListener('click', e => { if (e.target.id === 'intro') closeIntro(); });
+$('#t-resume').addEventListener('click', () => setPlay(true));
 function hideHint() { const el = $('#f-hint'); if (el.hidden) return; el.classList.add('off'); $('#vhelp').setAttribute('aria-expanded', 'false'); clearTimeout(hintT); hintT = setTimeout(() => { el.hidden = true; }, 650); }
 
 /* ---------- Tastatur ---------- */
@@ -3275,7 +3346,7 @@ function tourBoxHTML(u) {
   return `<div class="tb-head"><span class="tb-state" id="tb-state">Führung läuft</span><div class="seg tb-view" role="group" aria-label="Ansicht im Rundgang"><button data-view="in" aria-pressed="${TOUR.inside}">Im Raum</button><button data-view="top" aria-pressed="${!TOUR.inside}">Von oben</button></div></div>
     <div class="t-chips" role="tablist" aria-label="Räume">${stops.map((s, i) => `<button class="t-chip" role="tab" data-i="${i}" aria-selected="false"><span>${s.chip}</span><i></i></button>`).join('')}</div>
     <div class="t-step" aria-live="polite"><span class="lbl t-time">${SUNICON}<span id="t-meta"></span></span><h4 id="t-title"></h4><p class="t-sub" id="t-sub"></p><p class="t-body" id="t-body"></p><div class="t-extra" id="t-extra"></div></div>
-    <div class="t-ctrl"><button class="iconbtn" id="t-prev" aria-label="Vorheriger Raum">${ICON.prev}</button><button class="iconbtn" id="t-play" aria-pressed="true">${ICON.pause}</button><button class="iconbtn" id="t-next" aria-label="Nächster Raum">${ICON.next}</button>
+    <div class="t-ctrl"><button class="iconbtn" id="t-prev" aria-label="Vorheriger Raum">${ICON.prev}</button><button class="iconbtn" id="t-play" aria-pressed="true">${ICON.pause}</button><button class="iconbtn" id="t-next" aria-label="Nächster Raum"><span class="m-lab">Weiter</span>${ICON.next}</button>
       <span class="sp"></span><span class="t-tip" id="t-tip"></span>
       ${sold ? '<button class="btn sm m-only" data-act="similar">Ähnliche</button>' : `<button class="btn sm m-only" data-act="ask">${u.status === 'reserviert' ? 'Warteliste' : 'Exposé'}</button>`}</div>
     <div class="t-plan" id="t-plan" title="Raum antippen, um dorthin zu gehen">${planSVG(u, { maxW: 380, maxH: 300, marks, me: true })}<button class="linkbtn" data-act="plan">Grundriss groß</button></div>`;
@@ -3345,6 +3416,8 @@ function paintPlay() {
   b.setAttribute('aria-label', TOUR.play ? 'Führung anhalten' : last ? 'Rundgang neu starten' : 'Führung fortsetzen');
   st.textContent = TOUR.play ? 'Führung läuft' : last ? 'Rundgang zu Ende' : TOUR.why === 'grab' ? 'Pausiert · Sie steuern selbst' : 'Pausiert';
   st.classList.toggle('p', !TOUR.play);
+  // Handy: Wer sich selbst umgesehen hat, bekommt einen großen Knopf zurück in die Führung (V2-FORTSETZEN)
+  $('#t-resume').hidden = !(isMob() && ui.open && ui.view === 'unit' && !TOUR.play && !last);
 }
 function arrive() {
   if (!TOUR.on || TOUR.arrived || ui.view === 'list') return;
